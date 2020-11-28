@@ -1,21 +1,39 @@
 import React from "react"
+import PropType from "prop-types"
+
 import * as S from "./styled"
 
-const PostItem = () => (
-  <S.PostItemLink to="/slug/">
+const PostItem = ({
+  slug,
+  background,
+  category,
+  date,
+  timeToRead,
+  title,
+  description,
+}) => (
+  <S.PostItemLink to={slug}>
     <S.PostItemWrapper>
-      <S.PostItemTag background="#47650b">Misc</S.PostItemTag>
+      <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
-        <S.PostItemDate>30 de Julho de 2019 • 4 min de leitura</S.PostItemDate>
-        <S.PostItemTitle>
-          Diga não ao Medium: tenha sua própria plataforma
-        </S.PostItemTitle>
-          <S.PostItemDescription>
-          Algumas razões para você ter sua própria plataforma ao invés de soluções como o Medium.
-          </S.PostItemDescription>
+        <S.PostItemDate>
+          {date} • {timeToRead}
+        </S.PostItemDate>
+        <S.PostItemTitle>{title}</S.PostItemTitle>
+        <S.PostItemDescription>{description}</S.PostItemDescription>
       </S.PostItemInfo>
     </S.PostItemWrapper>
   </S.PostItemLink>
 )
+
+PostItem.propType = {
+  slug: PropType.string.inRequiride,
+  background: PropType.string,
+  category: PropType.inRequiride,
+  date: PropType.inRequiride,
+  timeToRead: PropType.inRequiride,
+  title: PropType.inRequiride,
+  description: PropType.inRequiride,
+}
 
 export default PostItem
