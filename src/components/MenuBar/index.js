@@ -1,5 +1,6 @@
 import React from "react"
 
+import { LightBulb } from '@styled-icons/octicons/LightBulb'
 import { Home } from "@styled-icons/boxicons-solid/Home"
 import { SearchAlt2 as Search } from "@styled-icons/boxicons-regular/Searchalt2"
 import { UpArrowAlt as Arrow } from "@styled-icons/boxicons-regular/UpArrowAlt"
@@ -23,7 +24,7 @@ const MenuBar = () => (
     </S.MenuBarGroup>
     <S.MenuBarGroup>
       <S.MenuBarItem title="Mudar o tema">
-        <Home />
+        <LightBulb />
       </S.MenuBarItem>
       <S.MenuBarItem title="Mudar visualização">
         <Grid />
