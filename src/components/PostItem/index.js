@@ -1,5 +1,5 @@
 import React from "react"
-import PropType from "prop-types"
+import PropTypes from "prop-types"
 
 import * as S from "./styled"
 
@@ -17,7 +17,7 @@ const PostItem = ({
       <S.PostItemTag background={background}>{category}</S.PostItemTag>
       <S.PostItemInfo>
         <S.PostItemDate>
-          {date} • {timeToRead}
+          {date} • {timeToRead} min de leitura
         </S.PostItemDate>
         <S.PostItemTitle>{title}</S.PostItemTitle>
         <S.PostItemDescription>{description}</S.PostItemDescription>
@@ -26,14 +26,14 @@ const PostItem = ({
   </S.PostItemLink>
 )
 
-PostItem.propType = {
-  slug: PropType.string.inRequiride,
-  background: PropType.string,
-  category: PropType.inRequiride,
-  date: PropType.inRequiride,
-  timeToRead: PropType.inRequiride,
-  title: PropType.inRequiride,
-  description: PropType.inRequiride,
+PostItem.propTypes = {
+  slug: PropTypes.string.isRequired,
+  background: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  timeToRead: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 }
 
 export default PostItem
